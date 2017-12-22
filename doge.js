@@ -11,6 +11,12 @@
  * ------ replace(str, find, rep)   关键词替换
  * ------ checkType(str, type)      检测字符串类型
  * ------ passwordLevel(str)        检测密码强度
+ *
+ * --- 数字模块
+ * ------ formatPrice(price, float) 格式化金额
+ *
+ * --- 数组模块
+ * ------
  */
 
 
@@ -24,7 +30,8 @@ const doge = {
    * @return  {string} 处理后的字符串
    */
   trim(str = '', type = 'side') {
-    if (typeof str !== 'string') str += '';
+    if (typeof str !== 'string') str = str.toString() + '';
+
     switch (type) {
       case 'side':
         return str.replace(/(^\s*)|(\s*$)/g, '');
@@ -48,7 +55,8 @@ const doge = {
    * @return  {string} 处理后的字符串
    */
   changeCase(str = '', type = 'upper') {
-    if (typeof str !== 'string') str += '';
+    if (typeof str !== 'string') str = str.toString() + '';
+
     switch (type) {
       case 'upper':
         return str.toUpperCase();
@@ -86,7 +94,8 @@ const doge = {
    * @return  {string} 处理后的字符串
    */
   replace(str = '', find = '', rep = '') {
-    if (typeof str !== 'string') str += '';
+    if (typeof str !== 'string') str = str.toString() + '';
+
     const RegExpResult = new RegExp(find, 'g');
     return str.replace(RegExpResult, rep);
   },
@@ -100,10 +109,10 @@ const doge = {
    * @return  {boolean} 判断的结果
    */
   checkType(str = '', type) {
-    if (!type) {
-      console.error('checkType(): 请传入合法的参数 type');
-      return;
-    }
+    const strType = typeof str;
+    if (!(strType === 'number' || strType === 'string')) return console.error('checkType: 请传入合法的参数 str');
+    if (!type) return console.error('checkType: 请传入合法的参数 type');
+
     switch (type) {
       case 'email':
         return /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/.test(str);
@@ -124,7 +133,7 @@ const doge = {
       case 'upper':
         return /^[A-Z]+$/.test(str);
       default:
-        console.error('checkType(): 参数 type 无效');
+        console.error('checkType: 参数 type 无效');
         return;
     }
   },
@@ -137,6 +146,9 @@ const doge = {
    * @return  {number}  密码强度等级
    */
   passwordLevel(str = '') {
+    const strType = typeof str;
+    if (!(strType === 'number' || strType === 'string')) return console.error('checkType: 请传入合法的参数 str');
+
     let level = 0;
     if ((str + '').length < 6) return level;
     if (/[0-9]/.test(str)) level++;
@@ -145,8 +157,41 @@ const doge = {
     if (/[\.|-|_]/.test(str)) level++;
     return level;
   },
+
+  /**
+   * @method  formatPrice(price, float)
+   *
+   * @price   {number}  待处理的金额
+   * @float   {number}  留下的小数位
+   *
+   * @return  {string}  处理后的金额字符串
+   */
+  formatPrice(price = 0, float = 2) {
+    const priceType = typeof price;
+    if (!(priceType === 'number' || priceType === 'string')) return console.error('formatPrice: 请传入合法的参数 price');
+    const floatType = typeof float;
+    if (!(floatType === 'number' || floatType === 'string')) return console.error('formatPrice: 请传入合法的参数 float');
+
+    price = price.toLocaleString('en-US');
+
+    const priceSplit = price.split('.');
+    if (priceSplit.length > 2) price = priceSplit.slice(0, 2).join('.');
+
+    float = parseInt(float);
+    if (float >= 0) {
+      const priceSplit = price.split('.');
+      let priceFloat = priceSplit[1];
+      const priceFloatSplit = priceFloat.split('');
+      if (float < priceFloatSplit.length) {
+        priceFloat = priceFloatSplit.slice(0, float).join('');
+        price = priceFloat.length ? [priceSplit[0], priceFloat].join('.') : priceSplit[0];
+      }
+    }
+
+    return price;
+  }
 };
 
 console.log(
-  doge.passwordLevel('11111A.')
+  doge.formatPrice('123123123123.0101.12323123')
 );
