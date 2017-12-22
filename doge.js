@@ -8,6 +8,7 @@
  *
  * --- 字符串模块
  * ------ trim(str, type)       去除空格
+ * ------ changeCase(str, type) 大小写转换
  *
  */
 
@@ -32,9 +33,43 @@ const doge = {
       default:
         return str;
     }
+  },
+
+  /**
+   * changeCase(str, type)
+   *
+   * @str   {string} 待处理的字符串
+   * @type  {number} 1-全部大写 2-全部小写 3-首字母大写 4-大小写转换
+   */
+  changeCase(str, type = 1) {
+    switch (type) {
+      case 1:
+        return str.toUpperCase();
+      case 2:
+        return str.toLowerCase();
+      case 3:
+        return str.replace(/\b\w+\b/g, word => word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase());
+      case 4:
+        const toggleCase = str => {
+          let result = '';
+          str.split('').forEach(item => {
+            if (/^([a-z]+)/.test(item)) {
+              result += item.toUpperCase();
+            } else if (/^([A-Z]+)/.test(item)) {
+              result += item.toLowerCase();
+            } else {
+              result += item;
+            }
+          });
+          return result;
+        };
+        return toggleCase(str);
+      default:
+        return str;
+    }
   }
 };
 
 console.log(
-  doge.trim('  1  23')
+  doge.changeCase('哈哈哈aaa', 3)
 );
