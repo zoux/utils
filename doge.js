@@ -15,6 +15,10 @@
  * --- 数字模块
  * ------ formatPrice(price, float) 格式化金额
  *
+ * --- 日期模块
+ * ------ pastTime(old, now)        距当前的时间（天/时/分）
+ * ------ formatTime(time, gap)     时间格式化为 YYYY%MM%DD
+ *
  * --- 数组模块
  * ------
  */
@@ -24,10 +28,10 @@ const doge = {
   /**
    * @method  trim(str, type)
    *
-   * @str     {string} 待处理的字符串
-   * @type    {string} side-前后空格 all-所有空格 front-前空格 behind-后空格
+   * @param   {string}  str   待处理的字符串
+   * @param   {string}  type  side-前后空格 all-所有空格 front-前空格 behind-后空格
    *
-   * @return  {string} 处理后的字符串
+   * @return  {string}  处理后的字符串
    */
   trim(str = '', type = 'side') {
     if (typeof str !== 'string') str = str.toString() + '';
@@ -49,10 +53,10 @@ const doge = {
   /**
    * @method  changeCase(str, type)
    *
-   * @str     {string} 待处理的字符串
-   * @type    {string} upper-全部大写 lower-全部小写 first-首字母大写 change-大小写转换
+   * @param   {string}  str   待处理的字符串
+   * @param   {string}  type  upper-全部大写 lower-全部小写 first-首字母大写 change-大小写转换
    *
-   * @return  {string} 处理后的字符串
+   * @return  {string}  处理后的字符串
    */
   changeCase(str = '', type = 'upper') {
     if (typeof str !== 'string') str = str.toString() + '';
@@ -87,9 +91,9 @@ const doge = {
   /**
    * @method  replace(str, find, rep)
    *
-   * @str     {string} 待处理的字符串
-   * @find    {string} 被替换的关键词
-   * @rep     {any}    替换为什么
+   * @param   {string}  str   待处理的字符串
+   * @param   {string}  find  被替换的关键词
+   * @param   {any}     rep   替换为什么
    *
    * @return  {string} 处理后的字符串
    */
@@ -103,8 +107,8 @@ const doge = {
   /**
    * @method  checkType(str, type)
    *
-   * @str     {string | number} 待判断的字符串
-   * @type    {string}  判断的类型
+   * @param   {string | number} str   待判断的字符串
+   * @param   {string}          type  判断的类型
    *
    * @return  {boolean} 判断的结果
    */
@@ -141,7 +145,7 @@ const doge = {
   /**
    * @method  passwordLevel(str)
    *
-   * @str     {string}  待判断的密码
+   * @param   {string}  str 待判断的密码
    *
    * @return  {number}  密码强度等级
    */
@@ -161,8 +165,8 @@ const doge = {
   /**
    * @method  formatPrice(price, float)
    *
-   * @price   {number}  待处理的金额
-   * @float   {number}  留下的小数位
+   * @param   {number}  price 待处理的金额
+   * @param   {number}  float 留下的小数位
    *
    * @return  {string}  处理后的金额字符串
    */
@@ -189,9 +193,50 @@ const doge = {
     }
 
     return price;
-  }
+  },
+
+  /**
+   * @method  pastTime(old, now)
+   *
+   * @param   {number}  old 之前的时间节点
+   * @param   {number}  now 当前的时间节点
+   *
+   * @return  {string}  距当前的时间
+   */
+  pastTime(old = Date.now(), now = Date.now()) {
+    let time;
+    let label;
+    const between = (Number(now) - Number(old)) / 1000;
+    if (between < 3600) {
+      time = ~~(between / 60);
+      label = '分钟';
+    } else if (between < 86400) {
+      time = ~~(between / 3600);
+      label = '小时';
+    } else {
+      time = ~~(between / 86400);
+      label = '天';
+    }
+    return `${time}${label}前`;
+  },
+
+  /**
+   * @method  formatTime(time, gap)
+   *
+   * @param   {number}  time 格式化前的时间
+   * @param   {string}  gap 间隔类型
+   *
+   * @return  {string}  格式化后的时间
+   */
+  formatTime(time = Date.now(), gap = '-') {
+    const date = new Date(time);
+    const Y = date.getFullYear();
+    const M = (date.getMonth() + 1 < 10 ? `0${(date.getMonth() + 1)}` : date.getMonth() + 1);
+    const D = (date.getDate() < 10 ? `0${(date.getDate() + 1)}` : date.getDate());
+    return `${Y}${gap}${M}${gap}${D}`;
+  },
 };
 
 console.log(
-  doge.formatPrice('123123123123.0101.12323123')
+  doge.formatTime()
 );
