@@ -1,0 +1,18 @@
+{
+  "name": "zouxin",
+  "version": "0.0.1",
+  "description": "🔧 致力于解决 JavaScript 中典型问题的方法集合，包括但不限于字符串/数字/日期处理、cookie 操作，以及其他的一些功能函数等等。",
+  "main": "zouxin.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zoux/zouxin.git"
+  },
+  "author": "Zoux",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Zoux/zouxin/issues"
+  },
+  "homepage": "https://github.com/Zoux/zouxin#readme"
+}
