@@ -7,12 +7,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Zoux/zouxin.git"
+    "url": "git+https://github.com/zoux/zouxin.git"
   },
   "author": "Zoux",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Zoux/zouxin/issues"
+    "url": "https://github.com/zoux/zouxin/issues"
   },
-  "homepage": "https://github.com/Zoux/zouxin#readme"
+  "homepage": "https://github.com/zoux/zouxin#readme"
 }
