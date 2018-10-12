@@ -1,18 +1,31 @@
 {
-  "name": "zouxin",
+  "name": "@zouxin/utils",
   "version": "0.0.1",
   "description": "个人开发总结的工具集",
   "main": "src/index.js",
   "scripts": {
+    "clean": "rimraf dist",
+    "dev": "webpack-dev-server --config build/webpack.dev.js",
+    "build": "npm run clean && webpack --config build/webpack.config.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zouxinjs/utils.git"
   },
-  "author": "Zoux",
+  "keywords": [
+    "utils"
+  ],
+  "author": "zoux",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/zouxinjs/utils/issues"
   },
-  "homepage": "https://github.com/zouxinjs/utils#readme"
+  "homepage": "https://github.com/zouxinjs/utils#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "rimraf": "^2.6.2",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  }
 }
