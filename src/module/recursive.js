@@ -9,8 +9,13 @@ import { ERROR_PARAMS_MISS } from '../constants'
  * @returns {Array}
  */
 function recursive (originalList, childrenKey, itemKey) {
-  if (!originalList || !childrenKey || !itemKey) return console.warn(ERROR_PARAMS_MISS)
   const result = []
+
+  if (!originalList || !childrenKey || !itemKey) {
+    console.warn(ERROR_PARAMS_MISS)
+    return result
+  }
+
   originalList.forEach(item => {
     result.push(item[itemKey])
     const children = item[childrenKey]

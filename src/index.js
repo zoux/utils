@@ -10,6 +10,8 @@ function loadJsSync () {
   console.log('loadJsSync')
 }
 
+export { recursive }
+
 export default {
   recursive
 }

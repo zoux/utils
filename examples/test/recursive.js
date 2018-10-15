@@ -1,4 +1,4 @@
-import utils from '../../src/index'
+import { recursive } from '../../src/index'
 
 const originalList = [{
   code: '1',
@@ -9,6 +9,6 @@ const originalList = [{
 const childrenKey = 'children'
 const itemKey = 'code'
 
-const result = utils.recursive(originalList, childrenKey, itemKey)
+const result = recursive(originalList, childrenKey, itemKey)
 
 console.log(result)

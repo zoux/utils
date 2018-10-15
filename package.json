@@ -1,6 +1,6 @@
 {
   "name": "@zouxin/utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "个人开发总结的工具集",
   "main": "src/index.js",
   "scripts": {
