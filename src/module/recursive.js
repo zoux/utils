@@ -1,4 +1,4 @@
-import { ERROR_PARAMS_MISS } from '../constants'
+import { ERROR_PARAMS_ERROR } from '../constants'
 
 /**
  * 递归取值
@@ -12,7 +12,7 @@ function recursive (originalList, childrenKey, itemKey) {
   const result = []
 
   if (!originalList || !childrenKey || !itemKey) {
-    console.warn(ERROR_PARAMS_MISS)
+    console.warn(ERROR_PARAMS_ERROR)
     return result
   }
 
