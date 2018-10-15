@@ -1,17 +1,20 @@
+import preloadImg from './module/preloadImg'
 import recursive from './module/recursive'
-
-// 图片预加载
-function preloadImg () {
-  console.log('preloadImg')
-}
 
 // js 同步加载
 function loadJsSync () {
   console.log('loadJsSync')
 }
 
-export { recursive }
-
-export default {
+const utils = {
+  preloadImg,
   recursive
 }
+
+if (window && !window.utils) {
+  window.utils = utils
+}
+
+export { preloadImg, recursive }
+
+export default utils
