@@ -11,4 +11,4 @@ const itemKey = 'code'
 
 const result = recursive(originalList, childrenKey, itemKey)
 
-console.log(result)
+console.log('__recursive_result__', result)
