@@ -7,11 +7,9 @@ const imgSrcList = [
 ;(async () => {
   const result = await preloadImg(imgSrcList)
 
-  setTimeout(() => {
-    const img = document.createElement('img')
-    img.src = imgSrcList[0]
-    document.body.appendChild(img)
-  }, 2000)
+  const img = document.createElement('img')
+  img.src = imgSrcList[0]
+  document.body.appendChild(img)
 
   console.log('__preloadImg_result__', result)
 })()

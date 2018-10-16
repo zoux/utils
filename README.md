@@ -30,6 +30,8 @@ preloadImg(imgUrl)
 
 ## API
 
+- js 同步加载 `utils.loadJsSync(jsSrc: String, attrAsync: Boolean)`
+- 图片预加载 `utils.preloadImg(imgSrcList: Array)`
 - 递归取值 `utils.recursive(originalList: Array, childrenKey: String, itemKey: String)`
 
 
