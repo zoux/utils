@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zouxinjs/utils.git"
+    "url": "git+https://github.com/zouxin/utils.git"
   },
   "keywords": [
     "utils"
@@ -18,9 +18,9 @@
   "author": "zoux",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zouxinjs/utils/issues"
+    "url": "https://github.com/zouxin/utils/issues"
   },
-  "homepage": "https://github.com/zouxinjs/utils#readme",
+  "homepage": "https://github.com/zouxin/utils#readme",
   "devDependencies": {
     "html-webpack-plugin": "^3.2.0",
     "rimraf": "^2.6.2",
