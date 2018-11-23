@@ -9,7 +9,7 @@ import { ERROR_PARAMS_ERROR } from '../constants'
 function preloadImg (imgSrcList) {
   return new Promise((resolve, reject) => {
     if (!Array.isArray(imgSrcList)) {
-      reject(new Error(ERROR_PARAMS_ERROR))
+      reject(ERROR_PARAMS_ERROR)
     } else {
       let loadedCount = 0
       const totalCount = imgSrcList.length

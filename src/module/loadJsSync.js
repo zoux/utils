@@ -10,7 +10,7 @@ import { ERROR_PARAMS_ERROR } from '../constants'
 function loadJsSync (jsSrc, attrAsync = true) {
   return new Promise((resolve, reject) => {
     if (!jsSrc) {
-      reject(new Error(ERROR_PARAMS_ERROR))
+      reject(ERROR_PARAMS_ERROR)
     } else {
       const script = document.createElement('script')
       script.src = jsSrc
@@ -20,7 +20,7 @@ function loadJsSync (jsSrc, attrAsync = true) {
         resolve()
       }
       script.onerror = () => {
-        reject(new Error(`加载失败：${jsSrc}`))
+        reject(`加载失败：${jsSrc}`)
       }
 
       document.head.appendChild(script)
