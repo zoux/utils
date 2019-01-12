@@ -1,10 +1,10 @@
 ## Intro
 
-个人开发总结的工具集
+个人开发总结的工具集。
 
 
 ## Install
-```shell
+```
 npm install @zouxin/utils -S
 ```
 
@@ -32,7 +32,6 @@ preloadImg(imgUrl)
 
 - js 同步加载 `utils.loadJsSync(jsSrc: String, attrAsync: Boolean)`
 - 图片预加载 `utils.preloadImg(imgSrcList: Array)`
-- 递归取值 `utils.recursive(originalList: Array, childrenKey: String, itemKey: String)`
 
 
 ## License
