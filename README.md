@@ -1,6 +1,6 @@
 ## Intro
 
-个人开发总结的工具集。
+个人开发总结的工具函数集合。
 
 
 ## Install
@@ -14,9 +14,9 @@ npm install @zouxin/utils -S
 全量引入
 
 ``` javascript
-import utils from '@zouxin/utils'
+import Utils from '@zouxin/utils'
 
-utils.preloadImg(imgUrl)
+Utils.preloadImg(imgSrcList)
 ```
 
 按需引入
@@ -24,7 +24,7 @@ utils.preloadImg(imgUrl)
 ``` javascript
 import { preloadImg } from '@zouxin/utils'
 
-preloadImg(imgUrl)
+preloadImg(imgSrcList)
 ```
 
 
