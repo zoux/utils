@@ -1,32 +1,30 @@
-## Intro
+# utils
 
-个人开发总结的工具函数集合。
-
+一个工具函数集合。
 
 ## Install
-```
+
+```bash
 npm install @zouxin/utils -S
 ```
 
-
 ## Quick Start
 
-全量引入
+全量引入：
 
-``` javascript
+```javascript
 import Utils from '@zouxin/utils'
 
 Utils.preloadImg(imgSrcList)
 ```
 
-按需引入
+按需引入：
 
-``` javascript
+```javascript
 import { preloadImg } from '@zouxin/utils'
 
 preloadImg(imgSrcList)
 ```
-
 
 ## API
 

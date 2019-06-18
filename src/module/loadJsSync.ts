@@ -1,4 +1,4 @@
-import Utils from '../../types'
+import { LoadJsSync } from '../../types/index'
 
 /**
  * js 同步加载
@@ -7,7 +7,7 @@ import Utils from '../../types'
  * @param {Boolean} attrAsync  是否启用 sync
  * @returns {Promise<void>}
  */
-const loadJsSync: Utils.LoadJsSync = function (jsSrc, attrAsync = true) {
+const loadJsSync: LoadJsSync = function (jsSrc, attrAsync = true) {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script')
     script.src = jsSrc

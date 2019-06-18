@@ -1,4 +1,4 @@
-import Utils from '../../types'
+import { PreloadImg } from '../../types/index'
 
 /**
  * 图片预加载
@@ -7,7 +7,7 @@ import Utils from '../../types'
  * @returns {Promise<void>}
  */
 
-const preloadImg: Utils.PreloadImg = function (imgSrcList) {
+const preloadImg: PreloadImg = function (imgSrcList) {
   return new Promise(resolve => {
     let loadedCount = 0
     const totalCount = imgSrcList.length
