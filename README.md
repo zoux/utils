@@ -13,23 +13,26 @@ npm install @zouxin/utils -S
 全量引入：
 
 ```javascript
-import Utils from '@zouxin/utils'
+import utils from '@zouxin/utils'
 
-Utils.preloadImg(imgSrcList)
+utils.getType(1) // number
 ```
 
 按需引入：
 
 ```javascript
-import { preloadImg } from '@zouxin/utils'
+import { getType } from '@zouxin/utils'
 
-preloadImg(imgSrcList)
+getType(1) // number
 ```
 
 ## API
 
-- js 同步加载 `utils.loadJsSync(jsSrc: String, attrAsync: Boolean)`
-- 图片预加载 `utils.preloadImg(imgSrcList: Array)`
+* 获取值类型 `getType (data: any): string`
+* 值是否不同 `isDiff (x: any, y: any): boolean`
+* js 同步加载 `LoadJsSync (jsSrc: string, attrAsync: boolean): Promise<void>`
+* 图片预加载 `preloadImg (imgSrcList: string[]): Promise<void>`
+* 递归执行函数 `recursive (data: any, callback: Function): Promise<void>`
 
 
 ## License

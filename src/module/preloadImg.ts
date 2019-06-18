@@ -3,11 +3,9 @@ import { PreloadImg } from '../../types/index'
 /**
  * 图片预加载
  *
- * @param {Array} imgSrcList 预加载的图片地址列表
- * @returns {Promise<void>}
+ * imgSrcList 预加载的图片地址列表
  */
-
-const preloadImg: PreloadImg = function (imgSrcList) {
+export default <PreloadImg>function (imgSrcList) {
   return new Promise(resolve => {
     let loadedCount = 0
     const totalCount = imgSrcList.length
@@ -31,5 +29,3 @@ const preloadImg: PreloadImg = function (imgSrcList) {
     })
   })
 }
-
-export default preloadImg

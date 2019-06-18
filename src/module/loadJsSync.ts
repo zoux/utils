@@ -3,11 +3,10 @@ import { LoadJsSync } from '../../types/index'
 /**
  * js 同步加载
  *
- * @param {String} jsSrc      同步加载的 js 地址
- * @param {Boolean} attrAsync  是否启用 sync
- * @returns {Promise<void>}
+ * jsSrc 同步加载的 js 地址
+ * attrAsync 是否启用 sync
  */
-const loadJsSync: LoadJsSync = function (jsSrc, attrAsync = true) {
+export default <LoadJsSync>function (jsSrc, attrAsync = true) {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script')
     script.src = jsSrc
@@ -23,5 +22,3 @@ const loadJsSync: LoadJsSync = function (jsSrc, attrAsync = true) {
     document.head.appendChild(script)
   })
 }
-
-export default loadJsSync
