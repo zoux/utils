@@ -1,6 +1,6 @@
 {
   "name": "@zouxin/utils",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "个人开发总结的工具函数集合",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
