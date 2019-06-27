@@ -1,4 +1,3 @@
-import { IsDiff } from '../../types/index'
 import { getType } from '../index'
 import { COMPLEX_TYPE_LIST } from '../constants/index'
 
@@ -8,7 +7,7 @@ import { COMPLEX_TYPE_LIST } from '../constants/index'
  * x 待比较的值甲
  * y 待比较的值乙
  */
-const isDiff = <IsDiff>function (x, y) {
+export default function isDiff (x: any, y: any): boolean {
   const xType: string = getType(x)
   const yType: string = getType(y)
 
@@ -25,8 +24,6 @@ const isDiff = <IsDiff>function (x, y) {
       .get(xType)(x, y)
   }
 }
-
-export default isDiff
 
 function __diffObject (x, y): boolean {
   // 获取 keys

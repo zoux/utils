@@ -1,4 +1,4 @@
-import { Recursive, IAnyObject, IAnyArray } from '../../types/index'
+import { IAnyObject, IAnyArray } from '../../types/index'
 import { getType } from '../index'
 import { COMPLEX_TYPE_LIST } from '../constants/index'
 
@@ -8,7 +8,7 @@ import { COMPLEX_TYPE_LIST } from '../constants/index'
  * data 递归的值
  * callback 执行的函数
  */
-const recursive = <Recursive>async function (data, callback) {
+export default async function recursive (data: any, callback: Function): Promise<void> {
   const dataType: string = getType(data)
 
   if (!COMPLEX_TYPE_LIST.includes(dataType)) {
@@ -20,8 +20,6 @@ const recursive = <Recursive>async function (data, callback) {
       .get(dataType)(data, callback)
   }
 }
-
-export default recursive
 
 async function __objectHandler (data: IAnyObject, callback: Function): Promise<void> {
   for (let key in data) {
