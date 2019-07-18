@@ -1,0 +1,20 @@
+import asyncLock from './module/asyncLock';
+import debounce from './module/debounce';
+import getType from './module/getType';
+import isDiff from './module/isDiff';
+import loadJsSync from './module/loadJsSync';
+import preloadImg from './module/preloadImg';
+import recursive from './module/recursive';
+import throttle from './module/throttle';
+export { asyncLock, debounce, getType, isDiff, loadJsSync, preloadImg, recursive, throttle };
+declare const _default: {
+    asyncLock: typeof asyncLock;
+    debounce: typeof debounce;
+    getType: typeof getType;
+    isDiff: typeof isDiff;
+    loadJsSync: typeof loadJsSync;
+    preloadImg: typeof preloadImg;
+    recursive: typeof recursive;
+    throttle: typeof throttle;
+};
+export default _default;
