@@ -6,6 +6,8 @@
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
   "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
     "clean": "rimraf ./dist",
     "dev": "npm run clean && rollup -w -c ./config/rollup.config.js --environment TARGET:dev",
     "build": "npm run clean && rollup -c ./config/rollup.config.js --environment TARGET:prod"
@@ -16,14 +18,16 @@
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/runtime": "^7.4.5",
-    "core-js": "^3.1.4",
+    "core-js": "^2.6.9",
     "rimraf": "^2.6.3",
+    "rollup": "^1.17.0",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^10.0.0",
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.0.3",
     "rollup-plugin-typescript2": "^0.21.1",
-    "typescript": "^3.5.2"
+    "typescript": "^3.5.2",
+    "vuepress": "^1.0.2"
   },
   "repository": {
     "type": "git",
