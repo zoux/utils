@@ -1,5 +1,5 @@
 /**
- * @zouxin/utils v1.1.1
+ * @zouxin/utils v1.2.0
  * author: zoux
  */
 (function (global, factory) {
@@ -3230,6 +3230,17 @@
 	}
 
 	/**
+	 * sleep 函数
+	 *
+	 * time 等待的时长
+	 */
+	function sleep(time) {
+	  return new Promise(function (resolve) {
+	    setTimeout(resolve, time);
+	  });
+	}
+
+	/**
 	 * 节流
 	 * func 需要包装的函数
 	 * delayTime 规定的延迟触发时间
@@ -3267,6 +3278,7 @@
 	  loadJsSync: loadJsSync,
 	  preloadImg: preloadImg,
 	  recursive: recursive,
+	  sleep: sleep,
 	  throttle: throttle
 	};
 
@@ -3278,6 +3290,7 @@
 	exports.loadJsSync = loadJsSync;
 	exports.preloadImg = preloadImg;
 	exports.recursive = recursive;
+	exports.sleep = sleep;
 	exports.throttle = throttle;
 
 	Object.defineProperty(exports, '__esModule', { value: true });

@@ -2,6 +2,10 @@
  * @zouxin/utils v1.2.0
  * author: zoux
  */
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
 }
@@ -3276,5 +3280,13 @@ var index = {
   throttle: throttle
 };
 
-export default index;
-export { asyncLock, debounce, getType, isDiff, loadJsSync, preloadImg, recursive, sleep, throttle };
+exports.asyncLock = asyncLock;
+exports.debounce = debounce;
+exports.default = index;
+exports.getType = getType;
+exports.isDiff = isDiff;
+exports.loadJsSync = loadJsSync;
+exports.preloadImg = preloadImg;
+exports.recursive = recursive;
+exports.sleep = sleep;
+exports.throttle = throttle;

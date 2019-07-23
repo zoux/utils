@@ -1,6 +1,6 @@
 {
   "name": "@zouxin/utils",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "个人开发总结的工具函数集合",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.esm.js",
