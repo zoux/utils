@@ -9,8 +9,9 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "clean": "rimraf ./dist",
-    "dev": "npm run clean && rollup -w -c ./config/rollup.config.js --environment TARGET:dev",
-    "build": "npm run clean && rollup -c ./config/rollup.config.js --environment TARGET:prod"
+    "dev": "npm run clean && rollup -w -c ./build/rollup.config.js --environment TARGET:dev",
+    "build": "npm run clean && rollup -c ./build/rollup.config.js --environment TARGET:prod",
+    "release": "sh build/release.sh"
   },
   "dependencies": {},
   "devDependencies": {
