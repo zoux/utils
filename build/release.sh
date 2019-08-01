@@ -10,5 +10,5 @@ then
   npm run build
 
   # publish
-  npm publish
+  npm publish --access public
 fi
