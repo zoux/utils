@@ -25,6 +25,12 @@ export type WrapperFunction = (...params: IAnyArray) => void
 export default function debounce (func: IAnyFunction, delayTime: number): WrapperFunction
 ```
 
+## disorder - 乱序
+
+```typescript
+export default function disorder (list: IAnyArray): IAnyArray
+```
+
 ## getType - 获取值类型
 
 ```typescript

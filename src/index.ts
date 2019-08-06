@@ -1,5 +1,6 @@
 import asyncLock from './module/asyncLock'
 import debounce from './module/debounce'
+import disorder from './module/disorder'
 import getType from './module/getType'
 import isDiff from './module/isDiff'
 import loadJsSync from './module/loadJsSync'
@@ -11,6 +12,7 @@ import throttle from './module/throttle'
 export {
   asyncLock,
   debounce,
+  disorder,
   getType,
   isDiff,
   loadJsSync,
@@ -23,6 +25,7 @@ export {
 export default {
   asyncLock,
   debounce,
+  disorder,
   getType,
   isDiff,
   loadJsSync,
