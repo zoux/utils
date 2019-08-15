@@ -16,6 +16,7 @@
     "clean": "rimraf ./dist",
     "dev": "npm run clean && rollup -w -c ./build/rollup.config.js --environment TARGET:dev",
     "build": "npm run clean && rollup -c ./build/rollup.config.js --environment TARGET:prod",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "release": "sh build/release.sh"
   },
   "dependencies": {},
@@ -24,6 +25,7 @@
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/runtime": "^7.4.5",
+    "conventional-changelog-cli": "^2.0.23",
     "core-js": "^2.6.9",
     "rimraf": "^2.6.3",
     "rollup": "^1.17.0",
