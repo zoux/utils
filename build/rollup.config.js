@@ -7,11 +7,13 @@ import { DEFAULT_EXTENSIONS } from '@babel/core'
 
 import { banner, pkgName } from './utils'
 
-const output = (() => {
+const getOutput = () => {
   let result = [
     {
-      file: 'dist/index.esm.js',
-      format: 'esm',
+      file: 'dist/index.umd.js',
+      format: 'umd',
+      name: pkgName,
+      exports: 'named',
       banner
     }
   ]
@@ -19,26 +21,19 @@ const output = (() => {
     result = [
       ...result,
       {
-        file: 'dist/index.cjs.js',
-        format: 'cjs',
-        exports: 'named',
-        banner
-      },
-      {
-        file: 'dist/index.umd.js',
-        format: 'umd',
-        name: pkgName,
-        exports: 'named',
+        file: 'dist/index.esm.js',
+        format: 'esm',
         banner
       }
     ]
   }
+
   return result
-})()
+}
 
 export default {
   input: 'src/index.ts',
-  output,
+  output: getOutput(),
   plugins: [
     pluginResolve(),
     pluginCommonjs(),

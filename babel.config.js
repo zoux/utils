@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = process.env.TARGET === 'prod' ? {
   "presets": [
     ["@babel/env", {
       modules: false, // 如不设置 「modules: false」，Babel 会在 Rollup 有机会做处理之前，将我们的模块转成 CommonJS，导致 Rollup 的一些处理失败
@@ -10,4 +10,4 @@ module.exports = {
   "plugins": [
     "@babel/plugin-transform-runtime"
   ]
-}
+} : {}
