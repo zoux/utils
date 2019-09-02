@@ -25,6 +25,12 @@ export type WrapperFunction = (...params: IAnyArray) => void
 export default function debounce (func: IAnyFunction, delayTime: number): WrapperFunction
 ```
 
+## deepClone - 深拷贝
+
+```typescript
+export default function deepClone <T extends any>(target: T): T
+```
+
 ## disorder - 乱序
 
 ```typescript

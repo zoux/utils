@@ -1,5 +1,6 @@
 import asyncLock from './module/asyncLock'
 import debounce from './module/debounce'
+import deepClone from './module/deepClone'
 import disorder from './module/disorder'
 import getType from './module/getType'
 import isDiff from './module/isDiff'
@@ -12,6 +13,7 @@ import throttle from './module/throttle'
 export {
   asyncLock,
   debounce,
+  deepClone,
   disorder,
   getType,
   isDiff,
@@ -25,6 +27,7 @@ export {
 export default {
   asyncLock,
   debounce,
+  deepClone,
   disorder,
   getType,
   isDiff,
